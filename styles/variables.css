@@ -1,1 +1,52 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  /* палитра */
+  --color: #000;
+  --accent-color: #fff;
+  --gradient-main-color: #d3d3d3;
+  --gradient-accent-start-color: #e7e7e7;
+  --gradient-accent-end-color: #1a1a1a;
+  --heart-color: #ff0000;
+
+  /* элементы оформления */
+  --border: solid 2px var(--color);
+  --page-gradient: repeating-linear-gradient(
+      90deg,
+      var(--gradient-main-color) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--gradient-main-color) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--gradient-accent-start-color) 0.01%,
+      var(--gradient-accent-end-color) 100%
+    );
+
+  /* шрифты */
+  --main-font: Inter, sans-serif;
+  --accent-font: PressStart2P, fantasy;
+  --card-text-weight: 400;
+  --card-title-weight: 700;
+  --header-title-weight: 400;
+
+  /* размеры и отступы */
+  --container-max-width: 700px;
+  --container-min-width: 375px;
+
+  /* анимация */
+  --duration: 0.3s;
+  --accent-duration: 0.5s;
+  --heart-contour-duration: 0.1s;
+
+  --delay: 0s;
+  --heart-core-delay: 0.03s;
+  --heart-body-delay: 0.05s;
+  --heart-contour-delay: 0.06s;
+  --heart-delay: 0.1s;
+  --heart-sparks-delay: 0.3s;
+}

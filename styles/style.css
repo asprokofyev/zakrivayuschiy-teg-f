@@ -85,22 +85,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   font-family: var(--accent-font);
   font-variation-settings: "wght" var(--header-title-weight, 400);
   border: var(--border);
   background-color: var(--accent-color);
   margin-block-end: 100px;
-  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem) 0
-    clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem);
+  padding-block: clamp(7.5rem, 7.1479rem + 1.5023vw, 7.775rem);
+  padding-inline: 0;
 }
 
 .header__logo {
-  font-size: clamp(3.0625rem, 2.7808rem + 1.4085vw, 4.0625rem);
+  font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
 }
 
 .header__title {
-  font-size: clamp(0.875rem, 0.7165rem + 0.7923vw, 1.4375rem);
+  font-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
   text-transform: uppercase;
 }
 
@@ -132,40 +132,45 @@
 .card__image {
   display: flex;
   inline-size: 100%;
-  block-size: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
 }
 
-.card__image_cosmos {
-  filter: contrast(2) brightness(0.5);
+/* фильтры для фотографий */
+.filter-contrast100 {
+  filter: contrast(100%);
 }
 
-.card__image_fog {
-  filter: blur(3px) grayscale(0.9);
+.filter-contrast200 {
+  filter: contrast(200%);
 }
 
-.card__image_first-victory {
-  filter: saturate(270%);
-}
-
-.card__image_for-all {
-  filter: sepia(50%);
-}
-
-.card__image_care {
-  filter: hue-rotate(25deg);
-}
-
-.card__image_adaptive {
-  filter: opacity(75%) invert(0.25) contrast(100%) brightness(150%);
-}
-
-.card__image_power {
+.filter-brightness75 {
   filter: brightness(75%);
 }
 
-.card__image_now {
-  filter: contrast(100%) brightness(100%);
+.filter-brightness150 {
+  filter: brightness(150%);
+}
+
+.filter-blured-grayscale {
+  filter: blur(3px) grayscale(0.9);
+}
+
+.filter-saturate {
+  filter: saturate(270%);
+}
+
+.filter-sepia {
+  filter: sepia(50%);
+}
+
+.filter_hue {
+  filter: hue-rotate(25deg);
+}
+
+.filter-opacity-invert {
+  filter: opacity(75%) invert(0.25);
 }
 
 .card__image-label {
@@ -205,7 +210,7 @@
   align-items: center;
   padding-inline: 25px;
   margin-block-end: 25px;
-  gap: 12px;
+  gap: 4px;
 }
 
 .card__icon-button {
@@ -232,7 +237,8 @@
 }
 
 .button-save {
-  inline-size: clamp(306px, 23vw, 335px);
+  inline-size: clamp(19.125rem, 18.3986rem + 3.0993vw, 21.188rem);
+  block-size: 55px;
   gap: 8px;
 }
 
@@ -283,7 +289,7 @@
   display: block;
 }
 
-@media (width <= 375px) {
+@media (width < 376px) {
   .button-save {
     block-size: 84px;
     flex-direction: column;
@@ -291,5 +297,10 @@
 
   .button-save svg {
     inline-size: 28px;
+  }
+
+  .header {
+    padding-block: 117px;
+    gap: 15px;
   }
 }

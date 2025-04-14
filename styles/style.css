@@ -165,7 +165,7 @@
   filter: sepia(50%);
 }
 
-.filter_hue {
+.filter-hue {
   filter: hue-rotate(25deg);
 }
 
